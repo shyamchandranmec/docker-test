@@ -57,7 +57,7 @@ RUN npm i --production
 RUN npm i -g pm2
 
 # Add application files
-RUN echo "Feb-2-4pm"
+RUN echo "Feb-2-7pm"
 ADD . ${appDir}
 
 #Expose the port
