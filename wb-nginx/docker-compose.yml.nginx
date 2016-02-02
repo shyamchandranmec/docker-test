@@ -1,0 +1,6 @@
+nginx-server:
+ restart: always
+ build: ./wb-nginx
+ ports: 
+  - "80:80"
+  - "443:443"

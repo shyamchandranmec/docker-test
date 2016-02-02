@@ -1,0 +1,15 @@
+node-app:
+ build: ./node-docker
+ ports: 
+  - "3000:3000"
+
+nginx-server:
+ restart: always
+ build: ./wb-nginx
+ volumes:
+  - "./wb-nginx/public-html:/usr/share/nginx/html"
+ ports: 
+  - "80:80"
+  - "443:443"
+ links:
+  - node-app:node-app
