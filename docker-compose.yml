@@ -1,6 +1,8 @@
 mongox:
  image: mongo
  container_name: mongox
+ ports: 
+  - "27017:27017"
  volumes:
   - "/var/data/db:/data/db"
 
