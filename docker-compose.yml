@@ -1,3 +1,9 @@
+mongox:
+ image: mongo
+ container_name: mongox
+ volumes:
+  - "/var/data/db:/data/db"
+  
 nodex:
  build: ./node-docker
  container_name: nodex
@@ -15,9 +21,3 @@ nginx-server:
  ports: 
   - "80:80"
   - "443:443"
-
-mongox:
- image: mongo
- container_name: mongox
- volumes:
-  - "/var/data/db:/data/db"
