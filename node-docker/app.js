@@ -14,7 +14,7 @@ const app = express();
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 
-var url = 'mongodb://'+ process.env.MONGO_HOST+'/testdocker';
+var url = 'mongodb://52.77.1.115:27017/testdocker';
 MongoClient.connect(url, function(err, db) {
   if(err) {
     global.mongostatus = "error"

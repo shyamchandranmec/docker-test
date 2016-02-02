@@ -3,11 +3,11 @@ mongox:
  container_name: mongox
  volumes:
   - "/var/data/db:/data/db"
-  
+
 nodex:
  build: ./node-docker
  container_name: nodex
- enviornment:
+ environment:
   - MONGO_HOST=${MONGO_HOST}
  ports: 
   - "3000:3000"
