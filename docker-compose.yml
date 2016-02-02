@@ -1,6 +1,8 @@
 nodex:
  build: ./node-docker
  container_name: nodex
+ enviornment:
+  - MONGO_HOST=${MONGO_HOST}
  ports: 
   - "3000:3000"
 
