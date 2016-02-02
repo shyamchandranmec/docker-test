@@ -1,11 +1,13 @@
 nodex:
  build: ./node-docker
+ container_name: nodex
  ports: 
   - "3000:3000"
 
 nginx-server:
  restart: always
  build: ./wb-nginx
+ container_name: nginx-server
  volumes:
   - "./wb-nginx/public-html:/usr/share/nginx/html"
  ports: 
@@ -14,5 +16,6 @@ nginx-server:
 
 mongox:
  image: mongo
+ container_name: mongox
  volumes:
   - "/var/data/db:/data/db"
