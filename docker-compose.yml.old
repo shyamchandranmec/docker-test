@@ -1,4 +1,4 @@
-nodex:
+node-app:
  build: ./node-docker
  ports: 
   - "3000:3000"
@@ -11,7 +11,7 @@ nginx-server:
  ports: 
   - "80:80"
   - "443:443"
-  
+
 mongox:
  image: mongox
  volumes:

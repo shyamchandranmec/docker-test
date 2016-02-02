@@ -14,12 +14,17 @@ const app = express();
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 
-var url = 'mongodb://mongox.weave.local:27017/dockerdb';
-/*MongoClient.connect(url, function(err, db) {
+var url = 'mongodb://mongox:27017/testdocker';
+MongoClient.connect(url, function(err, db) {
+  if(err) {
+    global.mongostatus = "error"
+  } else {
+    global.mongostatus = "Mongo connetion successful"
+  }
   assert.equal(null, err);
   console.log("Connected correctly to server.");
   db.close();
-});*/
+});
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
