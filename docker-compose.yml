@@ -21,5 +21,15 @@ nginx-server:
  volumes:
   - "./wb-nginx/public-html:/usr/share/nginx/html"
  ports: 
+  - "8080:80"
+  - "4430:443"
+
+varnish:
+ build: ./varnish-docker
+ container_name: varni
+ environment:
+  - VARNISH_BACKEND_IP=${VARNISH_BACKEND_IP}
+  - VARNISH_BACKEND_PORT=${VARNISH_BACKEND_PORT}
+  - VARNISH_PORT=${VARNISH_PORT}
+ ports:
   - "80:80"
-  - "443:443"

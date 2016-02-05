@@ -50,14 +50,16 @@ WORKDIR ${appDir}
 
 # Add our package.json and install *before* adding our application files
 ADD package.json ./
+RUN npm install -g express
 RUN npm install -g node-gyp
-RUN npm i --production
+RUN echo "feb 9 pm"
+RUN npm install --production
 
 # Install pm2 so we can run our application
 RUN npm i -g pm2
 
 # Add application files
-RUN echo "Feb-2-7pm"
+RUN echo "Feb-2-7pmii"
 ADD . ${appDir}
 
 #Expose the port
