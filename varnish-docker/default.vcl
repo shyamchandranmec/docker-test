@@ -18,9 +18,9 @@ backend server1 { # Define one backend
       "Connection: close"
       "User-Agent: Varnish Health Probe";
 
-    .interval  = 5s; # check the health of each backend every 5 seconds
-    .timeout   = 8s; # timing out after 1 second.
-    .window    = 5;  # If 3 out of the last 5 polls succeeded the backend is considered healthy, otherwise it will be marked as sick
+    .interval  = 50s; # check the health of each backend every 5 seconds
+    .timeout   = 80s; # timing out after 1 second.
+    .window    = 15;  # If 3 out of the last 5 polls succeeded the backend is considered healthy, otherwise it will be marked as sick
     .threshold = 3;
   }
 
