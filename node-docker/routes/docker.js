@@ -7,4 +7,9 @@ router.get('/', (req, res, next) => {
   });
 });
 
+router.head("/",function(req, res){
+	res.send({
+		hi: "hi"
+	})
+})
 module.exports = router;
