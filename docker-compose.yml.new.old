@@ -7,10 +7,17 @@ mongox:
   - "/var/data/db:/data/db"
 
 nodex:
- build: ./node-docker
+ build: ./poc
  container_name: nodex
  environment:
   - MONGO_HOST=${MONGO_HOST}
+  - MONGO_USER_NAME=${MONGO_USER_NAME}
+  - MONGO_PASSWORD=${MONGO_PASSWORD}
+  - MONGO_PORT=${MONGO_PORT}
+  - MONGO_DATABASE=${MONGO_DATABASE}
+  - DOMAIN_NAME=${DOMAIN_NAME}
+  - PORT=${PORT}
+
  ports: 
   - "3000:3000"
 
@@ -21,15 +28,5 @@ nginx-server:
  volumes:
   - "./wb-nginx/public-html:/usr/share/nginx/html"
  ports: 
-  - "8080:80"
-  - "4430:443"
-
-varnish:
- build: ./varnish-docker
- container_name: varni
- environment:
-  - VARNISH_BACKEND_IP=${VARNISH_BACKEND_IP}
-  - VARNISH_BACKEND_PORT=${VARNISH_BACKEND_PORT}
-  - VARNISH_PORT=${VARNISH_PORT}
- ports:
   - "80:80"
+  - "4430:443"
